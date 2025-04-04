@@ -4,7 +4,8 @@ export class HashingHelper {
     const salt = await bcrypt.genSalt(10);
     return await bcrypt.hash(data, salt);
   }
-    static async comparePassword(data: string,hashedData:string) {
-        return await bcrypt.compare(data, hashedData);
+  static async comparePassword(data: string, hashedData: string) {
+    const isMatch = await bcrypt.compare(data, hashedData);
+    return isMatch;
   }
 }
