@@ -1,0 +1,10 @@
+import * as bcrypt from 'bcrypt';
+export class HashingHelper {
+  static async hashPassword(data: string) {
+    const salt = await bcrypt.genSalt(10);
+    return await bcrypt.hash(data, salt);
+  }
+    static async comparePassword(data: string,hashedData:string) {
+        return await bcrypt.compare(data, hashedData);
+  }
+}

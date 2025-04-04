@@ -1,0 +1,9 @@
+services:
+  test-db:
+    image: postgres:14
+    ports:
+      - 5435:5434
+    environment:
+      POSTGRES_USER: mohmaed
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nestdb
